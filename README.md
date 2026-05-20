@@ -1,15 +1,9 @@
-# AppsFlyer plugin (Studycat — strict)
+# AppsFlyer plugin (Studycat)
 
-Studycat-maintained fork of the Solar2D AppsFlyer plugin, configured for **`plugin.appsflyer.strict`** only.
-
-See **[STUDYCAT.md](STUDYCAT.md)** for layout, `build.settings`, funbox builds, and upstream sync policy.
-
-Quick `build.settings`:
+Studycat-maintained Solar2D plugin. See **[STUDYCAT.md](STUDYCAT.md)** for build and upstream policy.
 
 ```lua
-["plugin.appsflyer.strict"] = {
-    publisherId = "com.studycat.appsflyerStrict"
+["plugin.appsflyer"] = {
+    publisherId = "com.studycat.appsflyer"
 }
 ```
-
-Upstream reference: [coronalabs/com.coronalabs-plugin.appsflyer](https://github.com/coronalabs/com.coronalabs-plugin.appsflyer) (manual port only; see STUDYCAT.md).

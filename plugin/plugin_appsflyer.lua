@@ -1,8 +1,8 @@
 local library = require("CoronaLibrary")
 
 local appsflyer = library:new{
-	name = "plugin.appsflyer.strict",
-	publisherId = "com.studycat.appsflyerStrict"
+	name = "plugin.appsflyer",
+	publisherId = "com.studycat.appsflyer"
 }
 
 local notSupported = " is not supported on Mac or Windows simulators. Please build for device."

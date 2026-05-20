@@ -32,11 +32,7 @@
 // ----------------------------------------------------------------------------
 
 
-#if PLUGIN_STRICT
-    #define PLUGIN_NAME        "plugin.appsflyer.strict"
-#else
-    #define PLUGIN_NAME        "plugin.appsflyer"
-#endif
+#define PLUGIN_NAME        "plugin.appsflyer"
 #define PLUGIN_VERSION     "1.2.0"
 #define PLUGIN_SDK_VERSION [[AppsFlyerLib shared] getSDKVersion]
 
@@ -896,11 +892,7 @@ AppsFlyerPlugin::logRevenueAds(lua_State* L)
 @end
 
 // ----------------------------------------------------------------------------
-#if PLUGIN_STRICT
-CORONA_EXPORT int luaopen_plugin_appsflyer_strict(lua_State *L)
-#else
 CORONA_EXPORT int luaopen_plugin_appsflyer(lua_State *L)
-#endif
 {
   return AppsFlyerPlugin::Open(L);
 }

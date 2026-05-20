@@ -3,7 +3,7 @@
 path=$(dirname "$0")
 
 OUTPUT_DIR=$1
-TARGET_NAME=plugin_appsflyerStrict
+TARGET_NAME=plugin_appsflyer
 OUTPUT_SUFFIX=a
 CONFIG=Release
 

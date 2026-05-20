@@ -24,9 +24,9 @@ settings =
 	},
 
 	plugins = {
-		["plugin.appsflyer.strict"] =
+		["plugin.appsflyer"] =
 		{
-			publisherId = "com.studycat.appsflyerStrict"
+			publisherId = "com.studycat.appsflyer"
 		},
 	}
 }
