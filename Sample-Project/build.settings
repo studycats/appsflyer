@@ -24,9 +24,9 @@ settings =
 	},
 
 	plugins = {
- 		["plugin.appsflyer"] =
-	     {
-	         publisherId = "com.coronalabs"
-	     },
-		}
+		["plugin.appsflyer.strict"] =
+		{
+			publisherId = "com.studycat.appsflyerStrict"
+		},
+	}
 }

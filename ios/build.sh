@@ -3,7 +3,7 @@
 path=$(dirname "$0")
 
 OUTPUT_DIR=$1
-TARGET_NAME=plugin_appsflyer
+TARGET_NAME=plugin_appsflyerStrict
 OUTPUT_SUFFIX=a
 CONFIG=Release
 
@@ -39,15 +39,15 @@ popd > /dev/null
 echo "OUTPUT_DIR: $OUTPUT_DIR"
 
 # Clean
-xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG clean
+xcodebuild -project "$path/Plugin.xcodeproj" -target "$TARGET_NAME" -configuration $CONFIG clean
 checkError
 
 # iOS
-xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG -sdk iphoneos
+xcodebuild -project "$path/Plugin.xcodeproj" -target "$TARGET_NAME" -configuration $CONFIG -sdk iphoneos
 checkError
 
 # iOS-sim
-xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG -sdk iphonesimulator
+xcodebuild -project "$path/Plugin.xcodeproj" -target "$TARGET_NAME" -configuration $CONFIG -sdk iphonesimulator
 checkError
 
 # create universal binary

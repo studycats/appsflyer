@@ -5,7 +5,7 @@
 --  Copyright (c) 2018 Corona Labs Inc. All rights reserved.
 --
 
-local appsflyer = require( "plugin.appsflyer" ) -- require( "plugin.appsflyer.strict" )
+local appsflyer = require( "plugin.appsflyer.strict" )
 
 local widget = require( "widget" )
 local json = require("json")

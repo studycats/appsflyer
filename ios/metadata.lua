@@ -3,9 +3,9 @@ local metadata =
 	plugin =
 	{
 		format = 'staticLibrary',
-		staticLibs = { 'plugin_appsflyer', },
+		staticLibs = { 'plugin_appsflyerStrict', },
 		frameworks = { 'AppsFlyerLib' },
-		frameworksOptional = { 'AdSupport', 'iAd' },
+		frameworksOptional = { 'AdServices', 'iAd' },
 		delegates = { 'CoronaAppsFlyerDelegate' }
 		-- usesSwift = true,
 	},

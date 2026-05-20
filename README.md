@@ -1,12 +1,15 @@
-Sources for the plugin `plugin.appsflyer`.
+# AppsFlyer plugin (Studycat — strict)
 
-Add following to your `build.settings` to use:
+Studycat-maintained fork of the Solar2D AppsFlyer plugin, configured for **`plugin.appsflyer.strict`** only.
+
+See **[STUDYCAT.md](STUDYCAT.md)** for layout, `build.settings`, funbox builds, and upstream sync policy.
+
+Quick `build.settings`:
+
 ```lua
-{
-    plugins = {
-        "plugin.appsflyer" = {
-            publisherId = "com.coronalabs",
-        },
-    },
+["plugin.appsflyer.strict"] = {
+    publisherId = "com.studycat.appsflyerStrict"
 }
 ```
+
+Upstream reference: [coronalabs/com.coronalabs-plugin.appsflyer](https://github.com/coronalabs/com.coronalabs-plugin.appsflyer) (manual port only; see STUDYCAT.md).
