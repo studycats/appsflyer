@@ -9,21 +9,10 @@
 /* Begin PBXBuildFile section */
 		70F91BD42108BA90001CBCB5 /* AppsFlyerPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 70F91BD12108BA8F001CBCB5 /* AppsFlyerPlugin.mm */; };
 		70F91BD52108BA90001CBCB5 /* CoronaAppsFlyerDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 70F91BD32108BA90001CBCB5 /* CoronaAppsFlyerDelegate.mm */; };
-		DB86659828B2C748003247D3 /* AppsFlyerPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 70F91BD12108BA8F001CBCB5 /* AppsFlyerPlugin.mm */; };
-		DB86659928B2C748003247D3 /* CoronaAppsFlyerDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 70F91BD32108BA90001CBCB5 /* CoronaAppsFlyerDelegate.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A4E253B4166D6FB300DCDC2C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DB86659B28B2C748003247D3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/${PRODUCT_NAME}";
@@ -40,19 +29,11 @@
 		70F91BD12108BA8F001CBCB5 /* AppsFlyerPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppsFlyerPlugin.mm; path = Plugin/AppsFlyerPlugin.mm; sourceTree = "<group>"; };
 		70F91BD32108BA90001CBCB5 /* CoronaAppsFlyerDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CoronaAppsFlyerDelegate.mm; path = Plugin/CoronaAppsFlyerDelegate.mm; sourceTree = "<group>"; };
 		A4E253B6166D6FB300DCDC2C /* libplugin_appsflyer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugin_appsflyer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB86659F28B2C748003247D3 /* libplugin_appsflyerStrict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugin_appsflyerStrict.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F572F81A1EE0705B001BC814 /* CoronaNative.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CoronaNative.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A4E253B3166D6FB300DCDC2C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DB86659A28B2C748003247D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				A4E253B6166D6FB300DCDC2C /* libplugin_appsflyer.a */,
-				DB86659F28B2C748003247D3 /* libplugin_appsflyerStrict.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,24 +100,6 @@
 			productReference = A4E253B6166D6FB300DCDC2C /* libplugin_appsflyer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DB86659528B2C748003247D3 /* plugin_appsflyerStrict */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DB86659C28B2C748003247D3 /* Build configuration list for PBXNativeTarget "plugin_appsflyerStrict" */;
-			buildPhases = (
-				DB86659628B2C748003247D3 /* Corona Native */,
-				DB86659728B2C748003247D3 /* Sources */,
-				DB86659A28B2C748003247D3 /* Frameworks */,
-				DB86659B28B2C748003247D3 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = plugin_appsflyerStrict;
-			productName = plugin_library;
-			productReference = DB86659F28B2C748003247D3 /* libplugin_appsflyerStrict.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,28 +122,12 @@
 			projectRoot = "";
 			targets = (
 				A4E253B5166D6FB300DCDC2C /* plugin_appsflyer */,
-				DB86659528B2C748003247D3 /* plugin_appsflyerStrict */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		C2E70B581EE9F110006E4570 /* Corona Native */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Corona Native";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# echo \"CORONA_ROOT: ${CORONA_ROOT}\"\nif [ ! -d \"${CORONA_ROOT}\" ]\nthen\n    echo \"error: Corona Native has not been setup.  Run 'Native/SetupCoronaNative.app' in your Corona install to set it up\" >&2\n\n    exit 1\nelse\n    echo \"Building with Corona Native from $(readlink \"${CORONA_ROOT}\")\"\nfi";
-			showEnvVarsInLog = 0;
-		};
-		DB86659628B2C748003247D3 /* Corona Native */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,15 +151,6 @@
 			files = (
 				70F91BD42108BA90001CBCB5 /* AppsFlyerPlugin.mm in Sources */,
 				70F91BD52108BA90001CBCB5 /* CoronaAppsFlyerDelegate.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DB86659728B2C748003247D3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB86659828B2C748003247D3 /* AppsFlyerPlugin.mm in Sources */,
-				DB86659928B2C748003247D3 /* CoronaAppsFlyerDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,40 +291,6 @@
 			};
 			name = Release;
 		};
-		DB86659D28B2C748003247D3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DSTROOT = /tmp/plugin_library.dst;
-				ENABLE_BITCODE = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = "PLUGIN_STRICT=1";
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DB86659E28B2C748003247D3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DSTROOT = /tmp/plugin_library.dst;
-				ENABLE_BITCODE = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = "PLUGIN_STRICT=1";
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -405,15 +308,6 @@
 			buildConfigurations = (
 				A4E253C0166D6FB300DCDC2C /* Debug */,
 				A4E253C1166D6FB300DCDC2C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DB86659C28B2C748003247D3 /* Build configuration list for PBXNativeTarget "plugin_appsflyerStrict" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DB86659D28B2C748003247D3 /* Debug */,
-				DB86659E28B2C748003247D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

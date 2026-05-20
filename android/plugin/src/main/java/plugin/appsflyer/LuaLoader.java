@@ -434,7 +434,7 @@ public class LuaLoader implements JavaFunction, CoronaRuntimeListener {
         // This method is executed when the Lua function is called
         @Override
         public int invoke(LuaState luaState) {
-            functionSignature = "appsflyer.getVersion()";
+            functionSignature = "appsflyer.getVersion() -> event.data includes isStrict";
 
             if (!isSDKInitialized()) {
                 return 0;
@@ -452,6 +452,7 @@ public class LuaLoader implements JavaFunction, CoronaRuntimeListener {
                         HashMap<String, Object> event = new HashMap<>();
                         event.put("pluginVersion", PLUGIN_VERSION);
                         event.put("sdkVersion", PLUGIN_SDK_VERSION());
+                        event.put("isStrict", BuildConfig.PLUGIN_STRICT);
                         dispatchLuaEvent(event);
                     }
                 });

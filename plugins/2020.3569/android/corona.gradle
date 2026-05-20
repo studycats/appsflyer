@@ -1,3 +1,0 @@
-dependencies {
-    implementation 'com.appsflyer:af-android-sdk:6.16.2'
-}

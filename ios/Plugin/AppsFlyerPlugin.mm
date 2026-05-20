@@ -399,7 +399,9 @@ AppsFlyerPlugin::init(lua_State *L)
     [AppsFlyerLib shared].delegate = appsflyerDelegate;
     [AppsFlyerLib shared].anonymizeUser = !localHasUserConsent;
     [AppsFlyerLib shared].isDebug = debugMode;
+#if PLUGIN_STRICT
     [[AppsFlyerLib shared] waitForATTUserAuthorizationWithTimeoutInterval:60.0];
+#endif
     [[AppsFlyerLib shared] start];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         // send Corona Lua event
@@ -428,7 +430,7 @@ AppsFlyerPlugin::getVersion(lua_State *L)
 
     Self& library = *context;
 
-    library.functionSignature = @"appsflyer.getVersion()";
+    library.functionSignature = @"appsflyer.getVersion() -> event.data includes isStrict";
 
     if (! isSDKInitialized(L)) {
         return 0;
@@ -439,7 +441,12 @@ AppsFlyerPlugin::getVersion(lua_State *L)
     // Create the reward event data
     NSDictionary *eventData = @{
                                 @"pluginVersion": @PLUGIN_VERSION,
-                                @"sdkVersion": PLUGIN_SDK_VERSION
+                                @"sdkVersion": PLUGIN_SDK_VERSION,
+#if PLUGIN_STRICT
+                                @"isStrict": @YES,
+#else
+                                @"isStrict": @NO,
+#endif
                                 };
 
     NSDictionary *coronaEvent = @{

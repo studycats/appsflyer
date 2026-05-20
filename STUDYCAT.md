@@ -1,6 +1,6 @@
 # Studycat fork — `plugin.appsflyer`
 
-Local Solar2D plugin maintained for funbox (`plugins/plugin-appsflyer`).
+Local Solar2D plugin for funbox (`plugins/plugin-appsflyer`).
 
 ## One plugin identity
 
@@ -8,10 +8,10 @@ Local Solar2D plugin maintained for funbox (`plugins/plugin-appsflyer`).
 |------|--------|
 | Lua module | `plugin.appsflyer` |
 | publisherId | `com.studycat.appsflyer` |
-| Install path | `~/Solar2DPlugins/com.studycat.appsflyer/` |
+| Install path | `~/Solar2DPlugins/com.studycat.appsflyer/plugin.appsflyer/` |
 | fun build | `./fun plugins build appsflyer ios android` |
 
-`build.settings`:
+App `build.settings`:
 
 ```lua
 ["plugin.appsflyer"] = {
@@ -19,14 +19,25 @@ Local Solar2D plugin maintained for funbox (`plugins/plugin-appsflyer`).
 }
 ```
 
-**Strict vs non-strict** is a compile-time flag (`PLUGIN_STRICT`), not a separate Corona plugin name. Default branch builds with `PLUGIN_STRICT=1` (ATT / strict SDK behavior). A `standard` branch can set `PLUGIN_STRICT=0` for the non-strict build of the same `plugin.appsflyer`.
+Strict vs non-strict is compile-time (`PLUGIN_STRICT`), not a separate Corona plugin name. Default `master` builds with `PLUGIN_STRICT=1` (iOS ATT wait in `init`). Branch `standard` can set `PLUGIN_STRICT=0`.
 
-## Layout
+## getVersion
 
-- `ios/`, `android/` — native source
-- `plugin/com.studycat.appsflyer/plugin.appsflyer/` — packaged `data.tgz` outputs
-- `plugin/plugin_appsflyer.lua` — simulator stub
-- `Sample-Project/` — sample app
+`appsflyer.getVersion()` dispatches `analyticsRequest` with `phase == "received"` and `data`:
+
+- `pluginVersion` — plugin release string
+- `sdkVersion` — AppsFlyer SDK version
+- `isStrict` — boolean, matches compile-time `PLUGIN_STRICT`
+
+## Layout (vs official Corona)
+
+| Studycat (this repo) | Official coronalabs |
+|----------------------|---------------------|
+| `ios/`, `android/` | `src/ios/`, `src/android/` |
+| `plugin/com.studycat.appsflyer/plugin.appsflyer/` | `plugins/2020.3569/` prebuilt only |
+| `plugin/plugin_appsflyer.lua` | marketplace sim stubs |
+
+Removed from this fork (do not restore): `plugins/2018.3326/`, `plugins/2020.3569/`, `plugin.appsflyer.strict` module, `plugin_appsflyerStrict` Xcode target.
 
 ## Upstream (policy C)
 

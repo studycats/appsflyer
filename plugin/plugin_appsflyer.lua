@@ -16,7 +16,7 @@ function appsflyer.logEvent()
 end
 
 function appsflyer.getVersion()
-	print("appsflyer.getVersion()" .. notSupported)
+	print("appsflyer.getVersion()" .. notSupported .. " (isStrict=N/A on simulator)")
 end
 
 function appsflyer.setHasUserConsent()
