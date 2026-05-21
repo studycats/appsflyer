@@ -47,7 +47,7 @@ import com.appsflyer.AppsFlyerConversionListener;
 @SuppressWarnings({"unused", "RedundantSuppression"})
 public class LuaLoader implements JavaFunction, CoronaRuntimeListener {
     private static final String PLUGIN_NAME = "plugin.appsflyer";
-    private static final String PLUGIN_VERSION = "1.1.0";
+    private static final String PLUGIN_VERSION = "1.3.0";
 
     private static String PLUGIN_SDK_VERSION() {
         return AppsFlyerLib.getInstance().getSdkVersion();

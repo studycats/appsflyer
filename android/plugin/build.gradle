@@ -18,7 +18,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation 'com.appsflyer:af-android-sdk:6.16.2'
+    implementation 'com.appsflyer:af-android-sdk:6.18.0'
     implementation 'com.google.code.gson:gson:2.11.0'
 
     implementation ':Corona@aar'

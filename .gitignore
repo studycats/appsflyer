@@ -1,3 +1,8 @@
 plugins/*.tgz
 *xcuser*
 .DS_Store
+ios/build/
+ios/BuiltPlugin/
+ios/libplugin_appsflyer.a
+android/.gradle/
+android/plugin/build/
